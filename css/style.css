@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("BebasNeueRegular"), url("/fonts/BebasNeueRegular.woff2") format("woff2"),
+    url("./fonts/BebasNeueRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   font-family: "Roboto";
   font-weight: 400;
@@ -61,8 +69,6 @@ body {
   margin: auto;
   padding-top: 54px;
   display: flex;
-  justify-content: center;
-  align-items:center;
 }
 .main__homeimage path {
   opacity: 0;
@@ -71,21 +77,48 @@ body {
 .main__homeimage path:hover {
   opacity: 1;
 }
-.main__info {
+.main__info {/*блок счетчика, выбора этажа и синей кнопки*/
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items:center;
-  flex-grow: 1;
+  justify-content: space-between;
 }
 .main__title {
   font-family: "Bebas Neue";
+  font-size:37px;
+  font-style: normal;
+  font-weight: normal;
   text-transform: uppercase;
 }
-.main__countergroup {
+.main__countergroup { /*группа счетчика этажей*/
   display: flex;
   flex-direction: column;
   align-items:center;
 }
+.main__counter {/*сам счетчик*/
+  font-family: "Bebas Neue";
+  font-size: 74px;
+  font-style:normal;
+  font-weight: normal;
+  margin: 25px 0px;
+}
+.main__buttondown {/*нижняя кнопка счетчика*/
+  transform:rotateX(180deg);
+}
 .main__counterarrowup {
-  transform:rotateX(100)
+  cursor: pointer;
+}
+
+.main__buttonblue {/*синяя кнопка*/
+  text-align: center;
+  color:white;
+  background-color:#3596F5;
+  padding: 16px 36px;
+  border-radius: 6px;
+  margin-top: 115px;
+  cursor: pointer;
+}
+path.current-floor { /*подсветка этажа из js*/
+  opacity: 1;
 }
