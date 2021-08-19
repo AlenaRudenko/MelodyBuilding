@@ -13,7 +13,7 @@ body {
 }
 .navbar {
   max-width: 1280px;/*по гриду определила рабочую область*/
-  margin: auto;
+  margin: auto;/*выравнила всё*/
   display: flex;
   justify-content: space-between;
   align-items:center;
@@ -55,4 +55,37 @@ body {
   font-weight: bold;
   font-size: 17px;
   line-height: 20px;
+}
+.main {
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 54px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.main__homeimage path {
+  opacity: 0;
+  cursor: pointer;
+}
+.main__homeimage path:hover {
+  opacity: 1;
+}
+.main__info {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  flex-grow: 1;
+}
+.main__title {
+  font-family: "Bebas Neue";
+  text-transform: uppercase;
+}
+.main__countergroup {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.main__counterarrowup {
+  transform:rotateX(100)
 }
