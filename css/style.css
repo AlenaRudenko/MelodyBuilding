@@ -9,53 +9,21 @@
   font-style: normal;
   font-display: swap;
 }
-@media (max-width: 1100px){
-      .main__container {
-        width:100%;
-        flex-direction: column;
-        align-items:center;
-        justify-content: center;
-        margin: none;
-        padding-top: 5px;
-      }
-      .header {
-        font-size: 1.2vw;
-        text-align: center;
-      }
-      .navbar__item {
-        margin-right:1%;
-      }
-      .navbar__logo img {
-        width: 90%;
-      }
-      .navbar__contacts span {
-        font-size: 1.7vw;
-      }
-      .navbar__contacts a {
-        font-size: 1.7vw;
-      }
-      .navbar {
-       max-width: 100%;
-       justify-content: space-between;
-       margin: none;
-      }
-      .main__buttonblue {
-        margin-top: 0px;
-      }
-}
-
 body {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 16px;
 }
+/* просто шапка количневая */
 .header {
   max-width: 100%;
   background-color: #635854;
   padding: 12px 0px;
   border-bottom: 4px solid #3596F5;
   text-align: center;
+  font-size: 1.2vw;
 }
+/* контейнер шапки где три блока: голо, навигация и телефон */
 .navbar {
   width: 1280px;/*по гриду определила рабочую область*/
   margin: auto;/*выравнила всё*/
@@ -63,85 +31,80 @@ body {
   justify-content: space-around;
   align-items:center;
 }
-.navbar__item {
-  display: flex;
-}
+/* контейнер навигации шапки */
 .navbar__menu {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 0; /*отключаем отступы внешние*/
   padding: 0;/*отключили внутренние отступы*/
   list-style: none;/*убрала точки, хотя их не было*/
 }
+/* отступы у навигации шапки */
 .navbar__item {
   padding-right: 7%;
-}
-.navbar__link {
   text-decoration: none;
   color: white;
 }
+/* оформление навигации в шапке */
+.navbar__item a {
+  text-decoration: none;
+  color: white;
+}
+/* блок спана и телефона в шапке */
 .navbar__contacts {
   display: flex;
   flex-direction: column;
   align-items:flex-end;
-  justify-content:center
-}
-.navbar__text {
-  display: block;
-  font-size: 14px;
+  font-size: 1.5vw;
   color:white;
-  margin-bottom: 4px;
 }
+/* стиль ссылки номера телефона */
 .navbar__phone {
+  padding-top:4px;
   text-decoration: none;
-  font-size: 17px;
   color:white;
   font-weight: bold;
-  font-size: 17px;
-  line-height: 20px;
 }
+/* главный блок контента */
 .main {
-  /* max-height: 100%; */
-  max-width: 100%;
+  max-width: 100%;/*чтобы вся область затрагивалась*/
   background-color:#E5E5E5;
 }  
+/* контейнер нужен чтобы по гриду отделить рабочую область 1280пкс */
 .main__container {
-  /* max-height: 100%; */
   max-width: 1280px;
-  margin: auto;
+  margin: auto;/*чтобы выравнить контент внутри грида по середине*/
   padding-top: 54px;
   display: flex;
-  align-items:center
-  
+  align-items:center;
 }
+/* контейнер фотки дома, флексит он чтобы картинка уменьшалась */
 .main__image {
   display: flex;
-  box-sizing: border-box;
 }
+/* макс ширину сотку,чтобы уменьшалась и увеличивалась по полному размеру блока, а высоту сотку чтобы блок уменьшился до размера картинки */
 .main__image svg {
-  margin: 0.1em;
+  margin: 0.1em; /*отступ картинки от краёв окна*/
   max-width:100%;
   height: 100%;
-  border:1px solid black;
 }
-.main__info {
-  border:1px solid red;
-}
+/* скрыли синие этажи */
 .main__homeimage path {
   opacity: 0;
   cursor: pointer;
 }
+/* при наведении синий этаж появляется */
 .main__homeimage path:hover {
   opacity: 1;
 }
+/*  */
 .main__info {/*блок счетчика, выбора этажа и синей кнопки*/
   display: flex;
-  flex-grow: 1;
+  flex-grow: 1;/*блок растягивается до самого возможного края во флексе*/
   flex-direction: column;
   align-items:center;
   justify-content: space-between;
 }
+/* выберите желаемый этаж */
 .main__title {
   font-family: "Bebas Neue";
   font-size:37px;
@@ -159,15 +122,15 @@ body {
   font-size: 74px;
   font-style:normal;
   font-weight: normal;
-  /* margin: 25px 0px; */
+  margin: 20px 0px;
 }
 .main__buttondown {/*нижняя кнопка счетчика*/
   transform:rotateX(180deg);
 }
+/* верхний счетчик */
 .main__counterarrowup {
   cursor: pointer;
 }
-
 .main__buttonblue {/*синяя кнопка*/
   text-align: center;
   color:white;
@@ -180,12 +143,94 @@ body {
 path.current-floor { /*подсветка этажа из js*/
   opacity: 1;
 }
+/* подвал сайта, просто серый блок  */
+footer {
+  width: 100%;
+  background-color: #D7D7D7;
+}
+/* контейнер подвала, с гридом флексом, в котором три блока */
+.footer__container {
+  width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+/* список политика, пуб оферта */
+.footer__list {
+  display: flex;
+}
+/* стиль их */
+.footer__list a {
+  text-decoration: none;
+  font-family: "Roboto";
+  list-style-type: none;
+  color:#635854;
+  font-size: 16px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+/* стиль заказать звонок в подвале */
+.footer__contacts a {
+  text-align: start;
+  display: flex;
+  font-size: 1.7vw;
+  text-decoration: none;
+  color:white;
+}
+/* стиль номера в подвале */
+.footer__contacts span {
+  font-size: 1.5vw;
+  color:white;
+}
+/* контейнер логотипа в поджвале */
+.footer__logo {
+  max-width: 100%;
+  height: 100%;
+}
+/* медиазапрос при ширине экрана менее 1100пкс */
+@media (max-width: 1100px){
+  .main__container {
+    width:100%;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    margin: none;
+    padding-top: 5px;
+  }
+  .header {
+    text-align: center;
+  }
+  .navbar__item {
+    margin-right:1%;
+  }
+  .navbar__logo img {
+    width: 90%;
+  }
+  .navbar {
+   max-width: 100%;
+   justify-content: space-between;
+   margin: none;
+  }
+  .main__buttonblue {
+    margin-top: 10px;
+  }
+  .footer__container {
+    max-width: 100%;
+    height: 100%;
+  }
+  .footer__list a {
+    font-size: 1.5vw;
+  }
+  .footer__contacts {
+    font-size: 1.5vw;
+}
+/* медиазапрос при ширине менее 500пкс */
 @media (max-width:500px) {
   .main__container {
     width:100%;
     height: 92.7vh;
     padding-top: 5px;
-    background-color:crimson;
   }
   .main__buttonblue {
     margin-top: 0px;
@@ -194,7 +239,7 @@ path.current-floor { /*подсветка этажа из js*/
     text-align: center;
     font-size: 1.7em;
   }
-  .main__info {
-
+  .footer__list a {
+    font-size: 1.4vw;
   }
 }
